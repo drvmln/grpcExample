@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "io.grpc.examples.helloworld";
+option java_outer_classname = "HelloWorldProto";
+
+package grpc;
+
+service PriceService {
+
+rpc GetPriceFromPriceList (PriceRequest) returns (PriceReply) {}
+}
+
+
+message PriceRequest {
+	string id = 1;
+}
+
+message PriceReply {
+	string maketPrice = 1;
+	string bulkPrice = 2;
+	string err = 3;
+}
